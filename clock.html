@@ -15,7 +15,29 @@
             /* border: 1px solid; */
             border-radius: 100%;
             position: relative;
+            box-shadow: 
+    inset -13.79px -13.79px 17.24px 3.45px #FFFFFF,  /* Inner shadow */
+    13.79px 13.79px 34.48px 0px #00000040;     
         }
+
+
+        .animate {
+  animation-name: rotate;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
 
         .analog-clock-minutes {
     height: 100%;
@@ -31,16 +53,42 @@
     background-size: contain;
 }
 
-.minutesbar {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+div#secondbar img {
+    transform: rotate(275deg);
 }
+
+div#minutesbar img {
+    transform: rotate(12deg);
+}
+
+
+
+div#hourbar img{
+    transform: rotate(99deg);
+}
+
+#minutesbar{
+    width: 1.6%;
+    height: 30%;
+    top: 19%;
+    left: 48.9%;
+    opacity: 0.8;
+}
+
+div#secondbar {
+    width: 1%;
+    height: 40%;
+    top: 9%;
+    left: 49.25%;
+    animation-duration: 60s;
+}
+
 
 
 .clock-bars{
     position: absolute;
+    background-color: grey;
+    transform-origin: bottom;
 }
 
 .dot {
@@ -49,15 +97,18 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: red;
+    background: grey;
     height: 11px;
     width: 10px;
     border-radius: 100%;
 }
 
-div#minutesbar{
-    left:30%;
-    top:8%;
+div#hourbar {
+    width: 1.8%;
+    height: 25%;
+    top: 25%;
+    left: 48.85%;
+    opacity: 0.8;
 }
 
 
@@ -89,15 +140,15 @@ setInterval(() => {
             <div class="dot"></div>
             <div class="analog-clock-hours">
              <div class="clock-bars" id="hourbar">
-                  <img src="images/hourbar.png" />
+                  <!-- <img src="images/hourbar.png" /> -->
              </div>
 
         <div class="clock-bars"  id="minutesbar">
-<img src="images/minutesbar.png"  />
+<!-- <img src="images/minutesbar.png"  /> -->
 </div>
 
-<div class="clock-bars" id="secondbar">
-<img src="images/secondbar.png" />
+<div class="clock-bars animate" id="secondbar">
+<!-- <img src="images/secondbar.png" /> -->
 </div>
 </div>
 </div>
